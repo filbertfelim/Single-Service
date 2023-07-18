@@ -12,19 +12,21 @@ datasource db {
 
 model User {
   id        String      @id @default(uuid())
-  username  String   @unique
+  username  String      @unique
   password  String
   name      String
+  token     String?     @unique
 }
 
 model Barang {
   id              String   @id @default(uuid())
   nama            String
   harga           Int     
-  stok            Int    
-  kode            String @unique
-  perusahaan      Perusahaan @relation(fields: [perusahaan_id],references: [id])  
+  stok            Int   
   perusahaan_id   String   
+  kode            String @unique
+  perusahaan      Perusahaan @relation(fields: [perusahaan_id],references: [kode], onDelete: Cascade)  
+   
 }
 
 model Perusahaan {

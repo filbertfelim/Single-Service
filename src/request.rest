@@ -1,0 +1,80 @@
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "halo2",
+    "password": "halo2"
+}  
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "username": "halo2",
+    "password": "halo2",
+    "name" : "halo2",
+    "confirmPassword": "halo2"
+} 
+
+###
+GET http://localhost:3000/self
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjg5Njg1MjEwfQ.up9JwcXASZLeuGUbWbMRF90ifRjFfYm2MSXdsK6kZjQ
+
+###
+POST http://localhost:3000/barang
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjg5Njg1MjEwfQ.up9JwcXASZLeuGUbWbMRF90ifRjFfYm2MSXdsK6kZjQ
+
+{
+    "nama" : "barang0",
+    "harga" : 1000,
+    "stok" : 20,
+    "perusahaan_id" : "ABC",
+    "kode" : "DEH"
+}
+
+###
+GET http://localhost:3000/barang
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjg5Njg1MjEwfQ.up9JwcXASZLeuGUbWbMRF90ifRjFfYm2MSXdsK6kZjQ
+
+###
+POST http://localhost:3000/barang/7e2e34d0-fa7f-47c1-9d88-eaa2af48b288
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjg5Njg1MjEwfQ.up9JwcXASZLeuGUbWbMRF90ifRjFfYm2MSXdsK6kZjQ
+
+{
+    "nama" : "barang9",
+    "harga" : 1000,
+    "stok" : 20,
+    "perusahaan_id" : "ABC",
+    "kode" : "DEB"
+}
+
+###
+DELETE http://localhost:3000/barang/36207441-18ec-473f-945d-6e543b125ae2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjg5Njg1MjEwfQ.up9JwcXASZLeuGUbWbMRF90ifRjFfYm2MSXdsK6kZjQ
+
+###
+GET http://localhost:3000/perusahaan
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjg5Njg1MjEwfQ.up9JwcXASZLeuGUbWbMRF90ifRjFfYm2MSXdsK6kZjQ
+
+###
+GET http://localhost:3000/perusahaan/694f2b3e-3a8f-427c-a78f-c89e412fa151
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjg5Njg1MjEwfQ.up9JwcXASZLeuGUbWbMRF90ifRjFfYm2MSXdsK6kZjQ
+
+###
+POST http://localhost:3000/perusahaan
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjg5Njg1MjEwfQ.up9JwcXASZLeuGUbWbMRF90ifRjFfYm2MSXdsK6kZjQ
+
+{
+    "nama": "PT Ivan Unyu",
+    "alamat": "Jalan Arjuna no. 12",
+    "no_telp": "08123456789",
+    "kode": "ABX"
+} 
