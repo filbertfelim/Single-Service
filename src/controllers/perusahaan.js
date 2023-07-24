@@ -23,7 +23,9 @@ export const getPerusahaan = async (req, res) => {
       });
     }
   } catch (error) {
-    res.status(500).json({ status: "error", message: error.message });
+    res
+      .status(500)
+      .json({ status: "error", message: error.message, data: null });
   }
 };
 
@@ -40,7 +42,9 @@ export const getPerusahaanById = async (req, res) => {
       data: response,
     });
   } catch (error) {
-    res.status(404).json({ status: "error", message: error.message });
+    res
+      .status(500)
+      .json({ status: "error", message: error.message, data: null });
   }
 };
 
@@ -53,6 +57,7 @@ export const createPerusahaan = async (req, res) => {
     return res.status(400).json({
       status: "error",
       message: "Invalid Kode Pajak format. Must be 3 uppercase letters.",
+      data: null,
     });
   }
 
@@ -71,7 +76,9 @@ export const createPerusahaan = async (req, res) => {
       data: perusahaan,
     });
   } catch (error) {
-    res.status(500).json({ status: "error", message: error.message });
+    res
+      .status(500)
+      .json({ status: "error", message: error.message, data: null });
   }
 };
 
@@ -84,6 +91,7 @@ export const updatePerusahaan = async (req, res) => {
     return res.status(400).json({
       status: "error",
       message: "Invalid Kode Pajak format. Must be 3 uppercase letters.",
+      data: null,
     });
   }
 
@@ -103,7 +111,9 @@ export const updatePerusahaan = async (req, res) => {
       data: perusahaan,
     });
   } catch (error) {
-    res.status(500).json({ status: "error", message: error.message });
+    res
+      .status(500)
+      .json({ status: "error", message: error.message, data: null });
   }
 };
 
@@ -123,6 +133,8 @@ export const deletePerusahaan = async (req, res) => {
       data: perusahaan,
     });
   } catch (error) {
-    res.status(500).json({ status: "error", message: error.message });
+    res
+      .status(500)
+      .json({ status: "error", message: error.message, data: null });
   }
 };

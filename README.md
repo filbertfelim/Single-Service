@@ -1,34 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Identitas Diri
 
-## Getting Started
+- Nama : Filbert Felim
+- NIM : 18221097
 
-First, run the development server:
+# Cara menjalankan single service API
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  git clone https://github.com/filbertfelim/Single-Service.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Redirect ke folder project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  cd Single-Service
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install dependencies
 
-## Learn More
+```bash
+  npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Redirect ke folder src
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  cd src
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Jalankan server
 
-## Deploy on Vercel
+```bash
+  nodemon index
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Gunakan link [API documentation](http://localhost:3001/api-docs/) untuk mencoba request API
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Design Pattern
+
+### Singleton Pattern
+
+- Prisma ( ORM yang digunakan ) _client_ dalam proyek ini secara global hanya menggunakan satu _client instance_ untuk seluruh _controllers_ agar tidak menambah koneksi ke _database_ yang berkali-kali.
+
+### Proxy Pattern
+
+- Proxy pattern digunakan dalam _middleware_ `verifyToken` untuk melakukan verifikasi JWT token yang dihasilkan ketika login dengan setiap _bearer token_ yang dikirim dari _request_ API agar memastikan bahwa _user_ harus _login_ terlebih dahulu ( agar bisa mendapatkan token ) sebelum melakukan _request_ API terhadap data
+
+### Request Response Pattern
+
+- digunakan dalam semua _data fetching_ ketika _client_ melakukan _request_ API dan _server_ akan memberikan _response_ kepada _client_. Digunakan _pattern_ ini karena kesederhanaan dalam mengambil data, dan _reliable_ karena pasti akan menerima sebuah bentuk _response_
+
+# Tech stack
+
+- ORM : Prisma version 4.16.2 ( Prisma client version 4.16.2 )
+- NodeJS : v20.3.0
+- modules :
+  - express : v4.18.2
+  - jsonwebtoken v9.0.1
+  - nodemon v3.0.1
+  - bcrypt v5.1.0
+  - cors v2.8.5
+  - dotenv v16.3.1
+  - swagger-jsdoc v6.2.8
+  - swagger-ui-express v5.0.0
+
+# Endpoint
+
+### Barang API
+
+- GET barang
+- GET barang by id
+- POST barang ( create new barang )
+- POST barang ( update barang )
+- DELETE barang
+
+### Perusahaan API
+
+- GET perusahaan
+- GET perusahaan by id
+- POST perusahaan ( create new perusahaan )
+- POST perusahaan ( update perusahaan )
+- DELETE perusahaan
+
+### User API
+
+- POST user ( register new user with admin access )
+- POST user ( login to get JWT token )
+- GET user ( get currently logged in user )
+
+Selengkapnya di [API documentation](http://localhost:3001/api-docs/)
+
+# Bonus
+
+### B07 Dokumentasi API
+
+- Menggunakan swagger untuk melakukan dokumentasi API yang dibuat dan bisa dicoba di link berikut : [API documentation](http://localhost:3001/api-docs/) ( setelah menjalankan server )

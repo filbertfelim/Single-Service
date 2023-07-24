@@ -9,13 +9,14 @@ export const verifyToken = (req, res, next) => {
       message: "No token provided. Access denied.",
       data: null,
     });
-  } else if (token != req.headers["cookie"].split("=")[1]) {
-    return res
-      .status(403)
-      .json({ status: "error", message: "Token not authorized", data: null });
   } else {
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
-      if (err) return res.sendStatus(403);
+      if (err)
+        return res.status(403).json({
+          status: "error",
+          message: "Token not authorized",
+          data: null,
+        });
       req.id = decoded.id;
       next();
     });

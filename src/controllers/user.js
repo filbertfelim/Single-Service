@@ -7,10 +7,9 @@ export const getUsers = async (req, res) => {
     const users = await prisma.user.findUnique({
       where: { token: req.headers["authorization"].split(" ")[1] },
     });
-    const status = "success";
 
     res.json({
-      status: status,
+      status: "success",
       message: "Success!",
       data: {
         username: users.username,
@@ -18,15 +17,19 @@ export const getUsers = async (req, res) => {
       },
     });
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    res
+      .status(500)
+      .json({ status: "error", message: error.message, data: null });
   }
 };
 export const register = async (req, res) => {
   const { username, password, name, confirmPassword } = req.body;
   if (password !== confirmPassword) {
-    return res
-      .status(400)
-      .json({ msg: "Password and Confirm Password don't match!" });
+    return res.status(400).json({
+      status: "error",
+      message: "Password and Confirm Password don't match!",
+      data: null,
+    });
   }
 
   try {
@@ -40,11 +43,19 @@ export const register = async (req, res) => {
         name: name,
       },
     });
-    const status = "success";
-
-    res.json({ status: status, message: "Registration Success!", data: user });
+    res.json({
+      status: "success",
+      message: "Registration Success!",
+      data: {
+        id: user.id,
+        username: user.username,
+        name: user.name,
+      },
+    });
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    res
+      .status(500)
+      .json({ status: "error", message: error.message, data: null });
   }
 };
 
@@ -59,12 +70,16 @@ export const login = async (req, res) => {
     });
 
     if (!user) {
-      return res.status(404).json({ msg: "User Not Found!" });
+      return res
+        .status(404)
+        .json({ status: "error", message: "User Not Found!", data: null });
     }
 
     const match = await bcrypt.compare(password, user.password);
     if (!match) {
-      return res.status(400).json({ msg: "Wrong Password!" });
+      return res
+        .status(400)
+        .json({ status: "error", message: "Wrong Password!", data: null });
     }
 
     const userId = user.id;

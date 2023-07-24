@@ -51,7 +51,9 @@ export const getBarang = async (req, res) => {
       });
     }
   } catch (error) {
-    res.status(500).json({ status: "error", message: error.message });
+    res
+      .status(500)
+      .json({ status: "error", message: error.message, data: null });
   }
 };
 
@@ -68,7 +70,9 @@ export const getBarangById = async (req, res) => {
       data: response,
     });
   } catch (error) {
-    res.status(500).json({ status: "error", message: error.message });
+    res
+      .status(500)
+      .json({ status: "error", message: error.message, data: null });
   }
 };
 
@@ -78,11 +82,13 @@ export const createBarang = async (req, res) => {
     return res.status(400).json({
       status: "error",
       message: "Invalid nilai harga, harga harus > 0",
+      data: null,
     });
   } else if (stok < 0) {
     return res.status(400).json({
       status: "error",
       message: "Invalid nilai stok, stok harus >= 0",
+      data: null,
     });
   }
   try {
@@ -101,7 +107,9 @@ export const createBarang = async (req, res) => {
       data: barang,
     });
   } catch (error) {
-    res.status(400).json({ status: "error", message: error.message });
+    res
+      .status(400)
+      .json({ status: "error", message: error.message, data: null });
   }
 };
 export const updateBarang = async (req, res) => {
@@ -110,11 +118,13 @@ export const updateBarang = async (req, res) => {
     return res.status(400).json({
       status: "error",
       message: "Invalid nilai harga, harga harus > 0",
+      data: null,
     });
   } else if (stok < 0) {
     return res.status(400).json({
       status: "error",
       message: "Invalid nilai stok, stok harus >= 0",
+      data: null,
     });
   }
   try {
@@ -136,7 +146,9 @@ export const updateBarang = async (req, res) => {
       data: barang,
     });
   } catch (error) {
-    res.status(400).json({ status: "error", message: error.message });
+    res
+      .status(400)
+      .json({ status: "error", message: error.message, data: null });
   }
 };
 
@@ -165,6 +177,8 @@ export const deleteBarang = async (req, res) => {
       },
     });
   } catch (error) {
-    res.status(400).json({ status: "error", message: error.message });
+    res
+      .status(400)
+      .json({ status: "error", message: error.message, data: null });
   }
 };

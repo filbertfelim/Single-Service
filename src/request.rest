@@ -1,4 +1,4 @@
-POST http://localhost:3000/login
+POST http://localhost:3001/login
 Content-Type: application/json
 
 {
@@ -6,25 +6,25 @@ Content-Type: application/json
     "password": "halo2"
 }  
 ###
-POST http://localhost:3000/register
+POST http://localhost:3001/register
 Content-Type: application/json
 
 {
-    "username": "halo2",
-    "password": "halo2",
-    "name" : "halo2",
-    "confirmPassword": "halo2"
+    "username": "sayabadut",
+    "password": "tolongsaya",
+    "name" : "badut",
+    "confirmPassword": "tolongsaya"
 } 
 
 ###
-GET http://localhost:3000/self
+GET http://localhost:3001/self
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjg5Njg1MjEwfQ.up9JwcXASZLeuGUbWbMRF90ifRjFfYm2MSXdsK6kZjQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjkwMDg0ODkxfQ.W6cmbCOP_7wwgtnerJ4duAatm1D2xMyZAQ9cXN_egRg
 
 ###
-POST http://localhost:3000/barang
+POST http://localhost:3001/barang
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjg5Njg1MjEwfQ.up9JwcXASZLeuGUbWbMRF90ifRjFfYm2MSXdsK6kZjQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjkwMDg5ODI2fQ.BBpZfdxfJcewksBvTVrScrm9V9Xrsf5f1xOa5Aic-hU
 
 {
     "nama" : "barang0",
@@ -35,9 +35,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkM
 }
 
 ###
-GET http://localhost:3000/barang
+GET http://localhost:3001/barang/f77a1262-cd96-4eb7-81cf-58574ad32875
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjg5Njg1MjEwfQ.up9JwcXASZLeuGUbWbMRF90ifRjFfYm2MSXdsK6kZjQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzdkMTQyNS02N2Q0LTQ0NzgtOGJmNy04YWMwZGQyYjEzYzgiLCJ1c2VybmFtZSI6ImhhbG8yIiwiaWF0IjoxNjkwMDg5ODI2fQ.BBpZfdxfJcewksBvTVrScrm9V9Xrsf5f1xOa5Aic-hU
 
 ###
 POST http://localhost:3000/barang/7e2e34d0-fa7f-47c1-9d88-eaa2af48b288
